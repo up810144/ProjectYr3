@@ -12,23 +12,10 @@ import gc
 
 '''
 
+git rid of m11 cut
+combine bins so D-c2 and c6-D
+vdisp bin at 0.1 instead of 0.05 
 
-vdisp from 1.9 to 2.5 in 0.05 range 
-
-plot number of galaxies against vdisp for each colour bin at a given redshift so an individual plot for each redshift 
-containing a plot for each colour bin 
-
-try number density plot with colour on the y and vdisp on the x with number as the density 
-colour on the y will just be bin 1,2,3, etc for each segment 
-
-to do, create two arrays, (look at phone pic) where you give each colour bin a value (1,2,3,4...) and each vdisp bin a 
-value(1,2,3,4...) and then for each loop, add to an array with the value for the bin its in i.e, (1,1,1,1...) for colour
-as its fixed then another like (1,1,1,2,2,2...) for the vdisp 
-
-alternatively create two arrays one for colour and one for vdisp that is such (1,1,1,1...) for colour and (1,2,3,4..) 
-vdisp where each colour bin has however many vdisp bins. and a third array with the total numnber in each of those.
-
-if statement! 
 '''
 
 #constants for stacking 
@@ -809,6 +796,7 @@ for i in range(10):
 
 	   	#print(len(plate))
 	   	total1.append(len(plate))
+	   	total10.append(len(plate))
 	   	v_r1 = v_r1 + 0.05
 	   	v_r2 = v_r2 + 0.05
 

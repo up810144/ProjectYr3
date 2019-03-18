@@ -513,7 +513,7 @@ for i in range(7):
 	   	v_r1 = v_r1 + 0.1
 	   	v_r2 = v_r2 + 0.1
 
-	if np.all(i == 6): #c6-c7
+	if np.all(i == 6): #c6-D
 	   v_r1 = 1.9
 	   v_r2 = 2.0
 
