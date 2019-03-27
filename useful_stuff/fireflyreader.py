@@ -29,7 +29,7 @@ plt.show()
 
 
 '''
-calculate residule chi squared value by difference between data minus model dividied by the data (modulus of that). take median of results 
+calculate residule chi squared value by difference between data minus model dividied by the data (modulus of that). take median of results
 
 
 plot metallicity and age  (light weighted) for each colour/redshift bin against vdisp (centre of bin)
