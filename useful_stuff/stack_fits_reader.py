@@ -4,7 +4,7 @@ from astropy.io import fits
 from matplotlib import pyplot as plt
 
 
-file_path = '/users/zak/Documents/project/z0405_CBC2SLAQ_V4_DAP.fits'
+file_path = '/users/zak/Documents/project/Stacks_Raw/z_0.5_0.6/CB_C5_C6/z0506_CBC5C6_V3.fits'
 
 # Check that the file actually exists
 
@@ -30,15 +30,15 @@ print("max wavelength = ",max(wavelength))
 print("min wavelength = ",min(wavelength))
 
 
-#error 
+#error
 
 error = hdu[3].data
-
+print("the error is",error)
 #vdisp = hdu[4].data
 
 #mean_error = hdu[3].data
 
-'''
+
 #plotting flux against wavelength and flux against restframe
 
 plt.plot((10**wavelength), flux, 'k')
@@ -60,11 +60,13 @@ plt.ylabel("flux (1e-17erg/cm^2/s/Ang)")
 plt.xlabel("wavelength (Angstrom)")
 
 plt.show()
+
 '''
 
-
 plt.plot(wavelength, flux, 'black')
+
 
 plt.ylabel("flux (1e-17erg/cm^2/s/Ang)")
 plt.xlabel("wavelength (Angstrom)")
 plt.show()
+'''

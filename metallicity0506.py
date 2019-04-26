@@ -195,6 +195,7 @@ for i in range(6):
 	model = hdu[1].data['firefly_model']
 	chi = np.mean(abs((data - model)/data))
 	chi_arr_7.append(chi)
+'''
 plt.errorbar(vdisp,Z_1,yerr=[Z_1_low_err,Z_1_up_err],fmt='o',elinewidth=0.9,capsize=2,color = 'navy',label='D-C2')
 plt.errorbar(vdisp,Z_2,yerr=[Z_2_low_err,Z_2_up_err],fmt='o',elinewidth=0.9,capsize=2,color = 'skyblue',label='C2-2SLAQ')
 plt.errorbar(vdisp,Z_3,yerr=[Z_3_low_err,Z_3_up_err],fmt='o',elinewidth=0.9,capsize=2,color='seagreen', label='2SLAQ-C3')
@@ -202,10 +203,24 @@ plt.errorbar(vdisp,Z_4,yerr=[Z_4_low_err,Z_4_up_err],fmt='o',elinewidth=0.9,caps
 plt.errorbar(vdisp,Z_5,yerr=[Z_5_low_err,Z_5_up_err],fmt='o',elinewidth=0.9,capsize=2,color='gold',label='LRG-C5')
 plt.errorbar(vdisp,Z_6,yerr=[Z_6_low_err,Z_6_up_err],fmt='o',elinewidth=0.9,capsize=2,color='orange',label='C5-C6')
 plt.errorbar(vdisp,Z_7,yerr=[Z_7_low_err,Z_7_up_err],fmt='o',elinewidth=0.9,capsize=2,color='red',label='C6-D')
+'''
 
-plt.ylim(-1.6,0.2)
+low_err = np.stack((Z_1_low_err,Z_2_low_err,Z_3_low_err,Z_4_low_err,Z_5_low_err,Z_6_low_err,Z_7_low_err))
+up_err = np.stack((Z_1_up_err,Z_2_up_err,Z_3_up_err,Z_4_up_err,Z_5_up_err,Z_6_up_err,Z_7_up_err))
+median_arr=np.stack((Z_1,Z_2,Z_3,Z_4,Z_5,Z_6,Z_7))
+median=np.median(median_arr,axis=0)
+
+i = np.array((5,5,3,4,4,6))
+j = np.array((0,1,2,3,4,5))
+index=i,j
+median_low_err = low_err[index]
+median_up_err = up_err[index]
+
+plt.errorbar(vdisp,median,yerr=[median_low_err,median_up_err],fmt='o',elinewidth=1.4,capsize=4,color='k',ecolor='r')
+
+plt.ylim(-1.0,0.0)
 plt.ylabel('Metallicity [Z/H]')
 plt.xlabel('log(vdips/kms^-1)')
-plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+#plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.title('0.5<z<0.6')
 plt.show()
